@@ -10,7 +10,13 @@ namespace webBot
     public class QuickReport : Math
     {
         public List<bool> validators = new List<bool>();
-        //create a list to store validator bools
+        //create a list to store validator outputs as bools
+
+        public List<string> pageLinkURLs = new List<string>();
+        //create list to store all page links as strings
+
+        public List<string> pageLinkAnchors = new List<string>();
+        //create list to store all anchor links as strings
 
         public String ProduceMetaData(HtmlAgilityPack.HtmlDocument document)
         {
@@ -93,5 +99,29 @@ namespace webBot
             validators.Add(PageTitlePass);
             return PageTitlePass;
         }
+
+        public List<string> CollectLinks(HtmlDocument document)
+        {
+            HtmlNodeCollection bodyNodes = document.DocumentNode.SelectNodes("//a[@href]");
+            foreach (var node in bodyNodes)
+            {
+                string href = node.Attributes["href"].Value;
+
+                if (href.StartsWith("/") || href.StartsWith("#"))
+                {
+                    pageLinkAnchors.Add(href);
+                }
+                else
+                {
+                    pageLinkURLs.Add(href);
+                }
+            }
+            return pageLinkURLs;
+        }
+
+        /* CollectLink method searches the HTMLWeb document it is passed for all nodes with HREF status
+         * collection is looped through so that the value of each node is taken for its destination
+         * each value is added to a list, so all links (content inside HREF tags) are stored together
+         * if else statement looks to remove internal (anchor) links, internal links */
     }
 }

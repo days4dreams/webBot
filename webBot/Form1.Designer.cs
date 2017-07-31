@@ -55,6 +55,12 @@
             this.labelPageTitlePassOutput = new System.Windows.Forms.Label();
             this.labelResponse = new System.Windows.Forms.Label();
             this.labelResponseOutput = new System.Windows.Forms.Label();
+            this.labelLinks = new System.Windows.Forms.Label();
+            this.labelLinksOutput = new System.Windows.Forms.Label();
+            this.labelNoOfLinks = new System.Windows.Forms.Label();
+            this.labelNoOfAnchors = new System.Windows.Forms.Label();
+            this.labelNoOfLinkOutput = new System.Windows.Forms.Label();
+            this.labelNoOfAnchorOutput = new System.Windows.Forms.Label();
             this.groupBoxResults.SuspendLayout();
             this.groupBoxSummary.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +115,12 @@
             // 
             // groupBoxResults
             // 
+            this.groupBoxResults.Controls.Add(this.labelNoOfAnchorOutput);
+            this.groupBoxResults.Controls.Add(this.labelNoOfLinkOutput);
+            this.groupBoxResults.Controls.Add(this.labelNoOfAnchors);
+            this.groupBoxResults.Controls.Add(this.labelNoOfLinks);
+            this.groupBoxResults.Controls.Add(this.labelLinksOutput);
+            this.groupBoxResults.Controls.Add(this.labelLinks);
             this.groupBoxResults.Controls.Add(this.labelMetaDescriptionLengthOutput);
             this.groupBoxResults.Controls.Add(this.labelMetaDescriptionLength);
             this.groupBoxResults.Controls.Add(this.labelPageTitleLengthOutput);
@@ -183,7 +195,7 @@
             // 
             this.labelPageUrl.AutoSize = true;
             this.labelPageUrl.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPageUrl.Location = new System.Drawing.Point(15, 34);
+            this.labelPageUrl.Location = new System.Drawing.Point(14, 34);
             this.labelPageUrl.Name = "labelPageUrl";
             this.labelPageUrl.Size = new System.Drawing.Size(32, 15);
             this.labelPageUrl.TabIndex = 12;
@@ -321,6 +333,65 @@
             this.labelResponseOutput.TabIndex = 22;
             this.labelResponseOutput.Text = "will appear here";
             // 
+            // labelLinks
+            // 
+            this.labelLinks.AutoSize = true;
+            this.labelLinks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLinks.Location = new System.Drawing.Point(477, 106);
+            this.labelLinks.Name = "labelLinks";
+            this.labelLinks.Size = new System.Drawing.Size(38, 15);
+            this.labelLinks.TabIndex = 18;
+            this.labelLinks.Text = "Links:";
+            // 
+            // labelLinksOutput
+            // 
+            this.labelLinksOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLinksOutput.Location = new System.Drawing.Point(614, 106);
+            this.labelLinksOutput.Name = "labelLinksOutput";
+            this.labelLinksOutput.Size = new System.Drawing.Size(233, 186);
+            this.labelLinksOutput.TabIndex = 19;
+            this.labelLinksOutput.Text = "will appear here";
+            // 
+            // labelNoOfLinks
+            // 
+            this.labelNoOfLinks.AutoSize = true;
+            this.labelNoOfLinks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfLinks.Location = new System.Drawing.Point(477, 58);
+            this.labelNoOfLinks.Name = "labelNoOfLinks";
+            this.labelNoOfLinks.Size = new System.Drawing.Size(74, 15);
+            this.labelNoOfLinks.TabIndex = 20;
+            this.labelNoOfLinks.Text = "No. of Links:";
+            // 
+            // labelNoOfAnchors
+            // 
+            this.labelNoOfAnchors.AutoSize = true;
+            this.labelNoOfAnchors.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfAnchors.Location = new System.Drawing.Point(477, 82);
+            this.labelNoOfAnchors.Name = "labelNoOfAnchors";
+            this.labelNoOfAnchors.Size = new System.Drawing.Size(91, 15);
+            this.labelNoOfAnchors.TabIndex = 21;
+            this.labelNoOfAnchors.Text = "No. of Anchors:";
+            // 
+            // labelNoOfLinkOutput
+            // 
+            this.labelNoOfLinkOutput.AutoSize = true;
+            this.labelNoOfLinkOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfLinkOutput.Location = new System.Drawing.Point(614, 58);
+            this.labelNoOfLinkOutput.Name = "labelNoOfLinkOutput";
+            this.labelNoOfLinkOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelNoOfLinkOutput.TabIndex = 22;
+            this.labelNoOfLinkOutput.Text = "will appear here";
+            // 
+            // labelNoOfAnchorOutput
+            // 
+            this.labelNoOfAnchorOutput.AutoSize = true;
+            this.labelNoOfAnchorOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfAnchorOutput.Location = new System.Drawing.Point(614, 82);
+            this.labelNoOfAnchorOutput.Name = "labelNoOfAnchorOutput";
+            this.labelNoOfAnchorOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelNoOfAnchorOutput.TabIndex = 23;
+            this.labelNoOfAnchorOutput.Text = "will appear here";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +442,12 @@
         private System.Windows.Forms.Label labelMetaDescriptionPassOutput;
         private System.Windows.Forms.Label labelResponseOutput;
         private System.Windows.Forms.Label labelResponse;
+        private System.Windows.Forms.Label labelLinksOutput;
+        private System.Windows.Forms.Label labelLinks;
+        private System.Windows.Forms.Label labelNoOfAnchorOutput;
+        private System.Windows.Forms.Label labelNoOfLinkOutput;
+        private System.Windows.Forms.Label labelNoOfAnchors;
+        private System.Windows.Forms.Label labelNoOfLinks;
     }
 }
 

@@ -28,14 +28,28 @@ namespace webBot
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            string urlInput = "https://www.me.com/";
+            string urlInput = textBoxURL.Text;
+            //string urlInput = "http://rileysfishshack.com/";
             HtmlWeb webPage = new HtmlWeb();
             var document = webPage.Load(urlInput);
+
+            /* notes about HTML Agility Pack */
 
             string statusCode = Convert.ToString(webPage.StatusCode);
             labelResponseOutput.Text = statusCode;
 
             labelURLOutput.Text = urlInput;
+
+            reportA.CollectLinks(document);
+            string listOfLinks = string.Join("\r\n", reportA.pageLinkURLs.ToArray());
+            labelLinksOutput.Text = listOfLinks;
+            labelNoOfLinkOutput.Text = Convert.ToString(reportA.pageLinkURLs.Count);
+            labelNoOfAnchorOutput.Text = Convert.ToString(reportA.pageLinkAnchors.Count);
+
+            /* pass the HTMLWeb document to the CollectLinks method inside of QuickReports
+             * use the string.Join method to combine the List of strings returned from CollectLinks method
+             * into one string. Pass string to label text field
+             * perform Count() on the the lists of links, present to user */
 
             string metaData = reportA.ProduceMetaData(document);
             labelMetaDescriptionResult.Text = metaData;
