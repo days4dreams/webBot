@@ -39,6 +39,17 @@ namespace webBot
             * so, moved the count of charatcers to a second method below */
         }
 
+        public String GetH1(HtmlAgilityPack.HtmlDocument document)
+        {
+            var h1Data = document.DocumentNode.SelectSingleNode("//h1");
+            string h1Contents = h1Data.InnerText;
+            return h1Contents;
+        }
+
+        /* Traverses the returned html document (document) for any nodes tagged H1
+         * Will return the text content - not all HTML - within a <h1> tag
+         * No style IDs will be passed */
+
         public string CountMetaData(string fulldescription)
         {
             string metaDescriptionLength = Convert.ToString(CountCharacters(fulldescription));
@@ -123,5 +134,25 @@ namespace webBot
          * collection is looped through so that the value of each node is taken for its destination
          * each value is added to a list, so all links (content inside HREF tags) are stored together
          * if else statement looks to remove internal (anchor) links, internal links */
+
+        public string GetRefreshUrl(HtmlAgilityPack.HtmlDocument document)
+        {
+//            HtmlAttribute metaDescription;
+  //          metaDescription = metaDesc.Attributes["content"];
+          
+            var root = document.DocumentNode;
+            var select = root.SelectNodes("//meta[contains(@content, 'URL')]");
+            string resultRedirect = string.Empty;
+            if (select != null)
+            {
+                resultRedirect = "URL has redirect..";
+                //Console.WriteLine(select[0].Attributes["content"].Value.Split('=')[1]);
+            }
+            else
+            {
+                 resultRedirect = "No redirect using HTML";
+            }
+            return resultRedirect;
+        }
     }
 }

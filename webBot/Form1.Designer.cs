@@ -61,6 +61,12 @@
             this.labelNoOfAnchors = new System.Windows.Forms.Label();
             this.labelNoOfLinkOutput = new System.Windows.Forms.Label();
             this.labelNoOfAnchorOutput = new System.Windows.Forms.Label();
+            this.labelRedirect = new System.Windows.Forms.Label();
+            this.labelRedirectOutput = new System.Windows.Forms.Label();
+            this.labelResponseTime = new System.Windows.Forms.Label();
+            this.labelResponseTimeOutput = new System.Windows.Forms.Label();
+            this.labelH1Content = new System.Windows.Forms.Label();
+            this.labelH1ContentOutput = new System.Windows.Forms.Label();
             this.groupBoxResults.SuspendLayout();
             this.groupBoxSummary.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +121,12 @@
             // 
             // groupBoxResults
             // 
+            this.groupBoxResults.Controls.Add(this.labelH1ContentOutput);
+            this.groupBoxResults.Controls.Add(this.labelH1Content);
+            this.groupBoxResults.Controls.Add(this.labelResponseTimeOutput);
+            this.groupBoxResults.Controls.Add(this.labelResponseTime);
+            this.groupBoxResults.Controls.Add(this.labelRedirectOutput);
+            this.groupBoxResults.Controls.Add(this.labelRedirect);
             this.groupBoxResults.Controls.Add(this.labelNoOfAnchorOutput);
             this.groupBoxResults.Controls.Add(this.labelNoOfLinkOutput);
             this.groupBoxResults.Controls.Add(this.labelNoOfAnchors);
@@ -145,7 +157,7 @@
             // 
             this.labelMetaDescriptionLengthOutput.AutoSize = true;
             this.labelMetaDescriptionLengthOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetaDescriptionLengthOutput.Location = new System.Drawing.Point(126, 107);
+            this.labelMetaDescriptionLengthOutput.Location = new System.Drawing.Point(126, 131);
             this.labelMetaDescriptionLengthOutput.Name = "labelMetaDescriptionLengthOutput";
             this.labelMetaDescriptionLengthOutput.Size = new System.Drawing.Size(97, 15);
             this.labelMetaDescriptionLengthOutput.TabIndex = 17;
@@ -155,7 +167,7 @@
             // 
             this.labelMetaDescriptionLength.AutoSize = true;
             this.labelMetaDescriptionLength.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetaDescriptionLength.Location = new System.Drawing.Point(13, 107);
+            this.labelMetaDescriptionLength.Location = new System.Drawing.Point(13, 131);
             this.labelMetaDescriptionLength.Name = "labelMetaDescriptionLength";
             this.labelMetaDescriptionLength.Size = new System.Drawing.Size(114, 15);
             this.labelMetaDescriptionLength.TabIndex = 16;
@@ -165,7 +177,7 @@
             // 
             this.labelPageTitleLengthOutput.AutoSize = true;
             this.labelPageTitleLengthOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPageTitleLengthOutput.Location = new System.Drawing.Point(126, 82);
+            this.labelPageTitleLengthOutput.Location = new System.Drawing.Point(126, 106);
             this.labelPageTitleLengthOutput.Name = "labelPageTitleLengthOutput";
             this.labelPageTitleLengthOutput.Size = new System.Drawing.Size(97, 15);
             this.labelPageTitleLengthOutput.TabIndex = 15;
@@ -175,7 +187,7 @@
             // 
             this.labelPageTitleLength.AutoSize = true;
             this.labelPageTitleLength.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPageTitleLength.Location = new System.Drawing.Point(13, 82);
+            this.labelPageTitleLength.Location = new System.Drawing.Point(13, 106);
             this.labelPageTitleLength.Name = "labelPageTitleLength";
             this.labelPageTitleLength.Size = new System.Drawing.Size(105, 15);
             this.labelPageTitleLength.TabIndex = 14;
@@ -205,7 +217,7 @@
             // labelMetaDescriptionResult
             // 
             this.labelMetaDescriptionResult.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetaDescriptionResult.Location = new System.Drawing.Point(126, 132);
+            this.labelMetaDescriptionResult.Location = new System.Drawing.Point(126, 156);
             this.labelMetaDescriptionResult.Name = "labelMetaDescriptionResult";
             this.labelMetaDescriptionResult.Size = new System.Drawing.Size(314, 63);
             this.labelMetaDescriptionResult.TabIndex = 11;
@@ -215,7 +227,7 @@
             // 
             this.labelMetaDescription.AutoSize = true;
             this.labelMetaDescription.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetaDescription.Location = new System.Drawing.Point(13, 132);
+            this.labelMetaDescription.Location = new System.Drawing.Point(13, 156);
             this.labelMetaDescription.Name = "labelMetaDescription";
             this.labelMetaDescription.Size = new System.Drawing.Size(105, 15);
             this.labelMetaDescription.TabIndex = 10;
@@ -232,11 +244,10 @@
             // 
             // labelPageTitleResult
             // 
-            this.labelPageTitleResult.AutoSize = true;
             this.labelPageTitleResult.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPageTitleResult.Location = new System.Drawing.Point(126, 58);
             this.labelPageTitleResult.Name = "labelPageTitleResult";
-            this.labelPageTitleResult.Size = new System.Drawing.Size(97, 15);
+            this.labelPageTitleResult.Size = new System.Drawing.Size(345, 39);
             this.labelPageTitleResult.TabIndex = 7;
             this.labelPageTitleResult.Text = "will appear here";
             // 
@@ -392,6 +403,66 @@
             this.labelNoOfAnchorOutput.TabIndex = 23;
             this.labelNoOfAnchorOutput.Text = "will appear here";
             // 
+            // labelRedirect
+            // 
+            this.labelRedirect.AutoSize = true;
+            this.labelRedirect.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRedirect.Location = new System.Drawing.Point(14, 230);
+            this.labelRedirect.Name = "labelRedirect";
+            this.labelRedirect.Size = new System.Drawing.Size(57, 15);
+            this.labelRedirect.TabIndex = 24;
+            this.labelRedirect.Text = "Redirect:";
+            // 
+            // labelRedirectOutput
+            // 
+            this.labelRedirectOutput.AutoSize = true;
+            this.labelRedirectOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRedirectOutput.Location = new System.Drawing.Point(126, 230);
+            this.labelRedirectOutput.Name = "labelRedirectOutput";
+            this.labelRedirectOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelRedirectOutput.TabIndex = 25;
+            this.labelRedirectOutput.Text = "will appear here";
+            // 
+            // labelResponseTime
+            // 
+            this.labelResponseTime.AutoSize = true;
+            this.labelResponseTime.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseTime.Location = new System.Drawing.Point(14, 256);
+            this.labelResponseTime.Name = "labelResponseTime";
+            this.labelResponseTime.Size = new System.Drawing.Size(93, 15);
+            this.labelResponseTime.TabIndex = 26;
+            this.labelResponseTime.Text = "Response Time:";
+            // 
+            // labelResponseTimeOutput
+            // 
+            this.labelResponseTimeOutput.AutoSize = true;
+            this.labelResponseTimeOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseTimeOutput.Location = new System.Drawing.Point(126, 256);
+            this.labelResponseTimeOutput.Name = "labelResponseTimeOutput";
+            this.labelResponseTimeOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelResponseTimeOutput.TabIndex = 27;
+            this.labelResponseTimeOutput.Text = "will appear here";
+            // 
+            // labelH1Content
+            // 
+            this.labelH1Content.AutoSize = true;
+            this.labelH1Content.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelH1Content.Location = new System.Drawing.Point(13, 281);
+            this.labelH1Content.Name = "labelH1Content";
+            this.labelH1Content.Size = new System.Drawing.Size(74, 15);
+            this.labelH1Content.TabIndex = 28;
+            this.labelH1Content.Text = "H1 Content:";
+            // 
+            // labelH1ContentOutput
+            // 
+            this.labelH1ContentOutput.AutoSize = true;
+            this.labelH1ContentOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelH1ContentOutput.Location = new System.Drawing.Point(126, 281);
+            this.labelH1ContentOutput.Name = "labelH1ContentOutput";
+            this.labelH1ContentOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelH1ContentOutput.TabIndex = 29;
+            this.labelH1ContentOutput.Text = "will appear here";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,6 +519,12 @@
         private System.Windows.Forms.Label labelNoOfLinkOutput;
         private System.Windows.Forms.Label labelNoOfAnchors;
         private System.Windows.Forms.Label labelNoOfLinks;
+        private System.Windows.Forms.Label labelRedirectOutput;
+        private System.Windows.Forms.Label labelRedirect;
+        private System.Windows.Forms.Label labelResponseTimeOutput;
+        private System.Windows.Forms.Label labelResponseTime;
+        private System.Windows.Forms.Label labelH1ContentOutput;
+        private System.Windows.Forms.Label labelH1Content;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
+using System.Diagnostics;
 
 namespace webBot
 {
@@ -33,10 +34,31 @@ namespace webBot
             HtmlWeb webPage = new HtmlWeb();
             var document = webPage.Load(urlInput);
 
-            /* notes about HTML Agility Pack */
+            /* using HTML Agility Pack, a .NET code library HTML parser
+             * take the input URL from user; this is the URL we will crawl
+             * create a new instance of the class htmlWeb
+             * Pass the input URL to the method Load() on the HTMLweb object
+             * EDIT: Add a prompt that indicates a valid URL has not been passed
+             * If nothing is matched null will be returned which means 
+             * that if you are assigning to string you will get a runtime error.
+             * Same is true for all following methods - require some additional validation
+             * EG if xxx == null */
+
+            string redirect = reportA.GetRefreshUrl(document);
+            labelRedirectOutput.Text = redirect;
+
+            /*Pass the loaded HTML Document to the method GetRefreshURL.
+             * unable to test this fully until validators for other methods are set up
+             * as null entries cause code break */
+
+            string loadTime = mathmatics.GetLoadingTime(urlInput) + " milliseconds";
+            labelResponseTimeOutput.Text = loadTime;
 
             string statusCode = Convert.ToString(webPage.StatusCode);
             labelResponseOutput.Text = statusCode;
+
+            /*using HTMLAgilityPacks StatusCode method. Returns the current repsonse
+             * of the HTTP it is used on */
 
             labelURLOutput.Text = urlInput;
 
@@ -71,6 +93,9 @@ namespace webBot
 
             bool titleIndicator = reportA.ValidatePageTitle(pageTitleCount);
             labelPageTitlePassOutput.Text = indicators.SetIndicator(titleIndicator);
+
+            string h1Tag = reportA.GetH1(document);
+            labelH1ContentOutput.Text = h1Tag;
 
             /* Originally all 'doing' code here, one long statement however, saw problems with lack of encapsulation.
              * EG 'count' value from CountCharacters method was being shared, therefore creating a collective total
