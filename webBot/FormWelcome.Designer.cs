@@ -77,6 +77,7 @@
             this.buttonFullReport.TabIndex = 6;
             this.buttonFullReport.Text = "Full Report";
             this.buttonFullReport.UseVisualStyleBackColor = true;
+            this.buttonFullReport.Click += new System.EventHandler(this.buttonFullReport_Click);
             // 
             // labelWelcomeQuickReport
             // 

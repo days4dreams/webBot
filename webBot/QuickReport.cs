@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HtmlAgilityPack;
+using System.Diagnostics;
 
 namespace webBot
 {
@@ -23,9 +27,15 @@ namespace webBot
             var metaDesc = document.DocumentNode.SelectSingleNode("//meta[@name='description']");
             HtmlAttribute metaDescription;
             metaDescription = metaDesc.Attributes["content"];
-            string fulldescription = metaDescription.Value;
+            string fulldescription = string.Empty;
+            if (metaDescription == null){
+                fulldescription = "No Meta Description Present";
+            }
+            else
+            {
+                fulldescription = metaDescription.Value;
+            }
             return fulldescription;
-
             //EDIT Form1.labelMetaDescriptionResult.Text = fulldescription;
 
             /* Encapsulation suggests that the text property should not accessible here, so
@@ -42,7 +52,16 @@ namespace webBot
         public String GetH1(HtmlAgilityPack.HtmlDocument document)
         {
             var h1Data = document.DocumentNode.SelectSingleNode("//h1");
-            string h1Contents = h1Data.InnerText;
+            string h1Contents = "";
+            if (h1Data == null)
+            {
+                h1Contents = "No H1 Data Present";
+            }
+            else
+            {
+                h1Contents = h1Data.InnerText;
+            }
+
             return h1Contents;
         }
 
@@ -80,7 +99,7 @@ namespace webBot
              * to set one of the URLS summary status indicators */
         }
 
-        public string ProducePageTitle(HtmlDocument document)
+        public string ProducePageTitle(HtmlAgilityPack.HtmlDocument document)
         {
             var pageTitle = document.DocumentNode.SelectSingleNode("//title");
             string title = pageTitle.InnerText;
@@ -111,7 +130,7 @@ namespace webBot
             return PageTitlePass;
         }
 
-        public List<string> CollectLinks(HtmlDocument document)
+        public List<string> CollectLinks(HtmlAgilityPack.HtmlDocument document)
         {
             HtmlNodeCollection bodyNodes = document.DocumentNode.SelectNodes("//a[@href]");
             foreach (var node in bodyNodes)

@@ -20,7 +20,7 @@ namespace webBot
             return count;
         }
 
-        public string GetLoadingTime(string urlInput)
+        public int GetLoadingTime(string urlInput)
         {
             Stopwatch stopwatch = new Stopwatch();
             HtmlWeb webPage = new HtmlWeb();
@@ -29,11 +29,26 @@ namespace webBot
             var result = webPage.Load(urlInput);
             stopwatch.Stop();
 
-            return stopwatch.Elapsed.Milliseconds.ToString();
+            int loadTime = stopwatch.Elapsed.Milliseconds;
+            return stopwatch.Elapsed.Milliseconds;
         }
 
         /* using Stopwatch to time the loading time of the given URL
          * Returns the load time in milliseconds as a string
          * Note use of using System.Diagnostics; */
+
+        public bool ValidateLoadTime(int loadingTime)
+        {
+            bool LoadTimePass;
+            if (loadingTime < 700)
+            {
+                LoadTimePass = true;
+            }
+            else
+            {
+                LoadTimePass = false;
+            }
+            return LoadTimePass;
+        }
     }
 }

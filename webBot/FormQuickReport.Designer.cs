@@ -1,6 +1,6 @@
 ﻿namespace webBot
 {
-    partial class Form1
+    partial class FormQuickReport
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuickReport));
             this.labelIntro = new System.Windows.Forms.Label();
             this.labelURL = new System.Windows.Forms.Label();
             this.labelSubIntro = new System.Windows.Forms.Label();
             this.textBoxURL = new System.Windows.Forms.TextBox();
             this.buttonRun = new System.Windows.Forms.Button();
             this.groupBoxResults = new System.Windows.Forms.GroupBox();
+            this.labelH1ContentOutput = new System.Windows.Forms.Label();
+            this.labelH1Content = new System.Windows.Forms.Label();
+            this.labelResponseTimeOutput = new System.Windows.Forms.Label();
+            this.labelResponseTime = new System.Windows.Forms.Label();
+            this.labelRedirectOutput = new System.Windows.Forms.Label();
+            this.labelRedirect = new System.Windows.Forms.Label();
+            this.labelNoOfAnchorOutput = new System.Windows.Forms.Label();
+            this.labelNoOfLinkOutput = new System.Windows.Forms.Label();
+            this.labelNoOfAnchors = new System.Windows.Forms.Label();
+            this.labelNoOfLinks = new System.Windows.Forms.Label();
+            this.labelLinksOutput = new System.Windows.Forms.Label();
+            this.labelLinks = new System.Windows.Forms.Label();
             this.labelMetaDescriptionLengthOutput = new System.Windows.Forms.Label();
             this.labelMetaDescriptionLength = new System.Windows.Forms.Label();
             this.labelPageTitleLengthOutput = new System.Windows.Forms.Label();
@@ -49,24 +61,15 @@
             this.labelPageTitle = new System.Windows.Forms.Label();
             this.toolTipPageTitle = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxSummary = new System.Windows.Forms.GroupBox();
-            this.labelMetaPass = new System.Windows.Forms.Label();
-            this.labelMetaDescriptionPassOutput = new System.Windows.Forms.Label();
-            this.labelPageTitlePass = new System.Windows.Forms.Label();
-            this.labelPageTitlePassOutput = new System.Windows.Forms.Label();
-            this.labelResponse = new System.Windows.Forms.Label();
             this.labelResponseOutput = new System.Windows.Forms.Label();
-            this.labelLinks = new System.Windows.Forms.Label();
-            this.labelLinksOutput = new System.Windows.Forms.Label();
-            this.labelNoOfLinks = new System.Windows.Forms.Label();
-            this.labelNoOfAnchors = new System.Windows.Forms.Label();
-            this.labelNoOfLinkOutput = new System.Windows.Forms.Label();
-            this.labelNoOfAnchorOutput = new System.Windows.Forms.Label();
-            this.labelRedirect = new System.Windows.Forms.Label();
-            this.labelRedirectOutput = new System.Windows.Forms.Label();
-            this.labelResponseTime = new System.Windows.Forms.Label();
-            this.labelResponseTimeOutput = new System.Windows.Forms.Label();
-            this.labelH1Content = new System.Windows.Forms.Label();
-            this.labelH1ContentOutput = new System.Windows.Forms.Label();
+            this.labelResponse = new System.Windows.Forms.Label();
+            this.labelPageTitlePassOutput = new System.Windows.Forms.Label();
+            this.labelPageTitlePass = new System.Windows.Forms.Label();
+            this.labelMetaDescriptionPassOutput = new System.Windows.Forms.Label();
+            this.labelMetaPass = new System.Windows.Forms.Label();
+            this.labelResponseTimePassOutput = new System.Windows.Forms.Label();
+            this.labelResponseTimePass = new System.Windows.Forms.Label();
+            this.buttonExport = new System.Windows.Forms.Button();
             this.groupBoxResults.SuspendLayout();
             this.groupBoxSummary.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +114,7 @@
             // buttonRun
             // 
             this.buttonRun.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRun.Location = new System.Drawing.Point(323, 139);
+            this.buttonRun.Location = new System.Drawing.Point(188, 139);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(129, 23);
             this.buttonRun.TabIndex = 4;
@@ -153,15 +156,141 @@
             this.groupBoxResults.Text = "Web Bot results";
             this.groupBoxResults.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // labelH1ContentOutput
+            // 
+            this.labelH1ContentOutput.AutoSize = true;
+            this.labelH1ContentOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelH1ContentOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelH1ContentOutput.Location = new System.Drawing.Point(126, 281);
+            this.labelH1ContentOutput.Name = "labelH1ContentOutput";
+            this.labelH1ContentOutput.Size = new System.Drawing.Size(67, 15);
+            this.labelH1ContentOutput.TabIndex = 29;
+            this.labelH1ContentOutput.Text = "H1 Content";
+            // 
+            // labelH1Content
+            // 
+            this.labelH1Content.AutoSize = true;
+            this.labelH1Content.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelH1Content.Location = new System.Drawing.Point(13, 281);
+            this.labelH1Content.Name = "labelH1Content";
+            this.labelH1Content.Size = new System.Drawing.Size(74, 15);
+            this.labelH1Content.TabIndex = 28;
+            this.labelH1Content.Text = "H1 Content:";
+            // 
+            // labelResponseTimeOutput
+            // 
+            this.labelResponseTimeOutput.AutoSize = true;
+            this.labelResponseTimeOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseTimeOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelResponseTimeOutput.Location = new System.Drawing.Point(126, 256);
+            this.labelResponseTimeOutput.Name = "labelResponseTimeOutput";
+            this.labelResponseTimeOutput.Size = new System.Drawing.Size(63, 15);
+            this.labelResponseTimeOutput.TabIndex = 27;
+            this.labelResponseTimeOutput.Text = "Page Load";
+            // 
+            // labelResponseTime
+            // 
+            this.labelResponseTime.AutoSize = true;
+            this.labelResponseTime.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseTime.Location = new System.Drawing.Point(14, 256);
+            this.labelResponseTime.Name = "labelResponseTime";
+            this.labelResponseTime.Size = new System.Drawing.Size(93, 15);
+            this.labelResponseTime.TabIndex = 26;
+            this.labelResponseTime.Text = "Response Time:";
+            // 
+            // labelRedirectOutput
+            // 
+            this.labelRedirectOutput.AutoSize = true;
+            this.labelRedirectOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRedirectOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelRedirectOutput.Location = new System.Drawing.Point(126, 230);
+            this.labelRedirectOutput.Name = "labelRedirectOutput";
+            this.labelRedirectOutput.Size = new System.Drawing.Size(85, 15);
+            this.labelRedirectOutput.TabIndex = 25;
+            this.labelRedirectOutput.Text = "Redirect Status";
+            // 
+            // labelRedirect
+            // 
+            this.labelRedirect.AutoSize = true;
+            this.labelRedirect.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRedirect.Location = new System.Drawing.Point(14, 230);
+            this.labelRedirect.Name = "labelRedirect";
+            this.labelRedirect.Size = new System.Drawing.Size(57, 15);
+            this.labelRedirect.TabIndex = 24;
+            this.labelRedirect.Text = "Redirect:";
+            // 
+            // labelNoOfAnchorOutput
+            // 
+            this.labelNoOfAnchorOutput.AutoSize = true;
+            this.labelNoOfAnchorOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfAnchorOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelNoOfAnchorOutput.Location = new System.Drawing.Point(614, 82);
+            this.labelNoOfAnchorOutput.Name = "labelNoOfAnchorOutput";
+            this.labelNoOfAnchorOutput.Size = new System.Drawing.Size(126, 15);
+            this.labelNoOfAnchorOutput.TabIndex = 23;
+            this.labelNoOfAnchorOutput.Text = "Count of Internal Links";
+            // 
+            // labelNoOfLinkOutput
+            // 
+            this.labelNoOfLinkOutput.AutoSize = true;
+            this.labelNoOfLinkOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfLinkOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelNoOfLinkOutput.Location = new System.Drawing.Point(614, 58);
+            this.labelNoOfLinkOutput.Name = "labelNoOfLinkOutput";
+            this.labelNoOfLinkOutput.Size = new System.Drawing.Size(128, 15);
+            this.labelNoOfLinkOutput.TabIndex = 22;
+            this.labelNoOfLinkOutput.Text = "Count of External Links";
+            // 
+            // labelNoOfAnchors
+            // 
+            this.labelNoOfAnchors.AutoSize = true;
+            this.labelNoOfAnchors.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfAnchors.Location = new System.Drawing.Point(477, 82);
+            this.labelNoOfAnchors.Name = "labelNoOfAnchors";
+            this.labelNoOfAnchors.Size = new System.Drawing.Size(91, 15);
+            this.labelNoOfAnchors.TabIndex = 21;
+            this.labelNoOfAnchors.Text = "No. of Anchors:";
+            // 
+            // labelNoOfLinks
+            // 
+            this.labelNoOfLinks.AutoSize = true;
+            this.labelNoOfLinks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfLinks.Location = new System.Drawing.Point(477, 58);
+            this.labelNoOfLinks.Name = "labelNoOfLinks";
+            this.labelNoOfLinks.Size = new System.Drawing.Size(74, 15);
+            this.labelNoOfLinks.TabIndex = 20;
+            this.labelNoOfLinks.Text = "No. of Links:";
+            // 
+            // labelLinksOutput
+            // 
+            this.labelLinksOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLinksOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelLinksOutput.Location = new System.Drawing.Point(614, 106);
+            this.labelLinksOutput.Name = "labelLinksOutput";
+            this.labelLinksOutput.Size = new System.Drawing.Size(233, 186);
+            this.labelLinksOutput.TabIndex = 19;
+            this.labelLinksOutput.Text = "Links will be listed";
+            // 
+            // labelLinks
+            // 
+            this.labelLinks.AutoSize = true;
+            this.labelLinks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLinks.Location = new System.Drawing.Point(477, 106);
+            this.labelLinks.Name = "labelLinks";
+            this.labelLinks.Size = new System.Drawing.Size(38, 15);
+            this.labelLinks.TabIndex = 18;
+            this.labelLinks.Text = "Links:";
+            // 
             // labelMetaDescriptionLengthOutput
             // 
             this.labelMetaDescriptionLengthOutput.AutoSize = true;
-            this.labelMetaDescriptionLengthOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetaDescriptionLengthOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetaDescriptionLengthOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.labelMetaDescriptionLengthOutput.Location = new System.Drawing.Point(126, 131);
             this.labelMetaDescriptionLengthOutput.Name = "labelMetaDescriptionLengthOutput";
-            this.labelMetaDescriptionLengthOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelMetaDescriptionLengthOutput.Size = new System.Drawing.Size(146, 15);
             this.labelMetaDescriptionLengthOutput.TabIndex = 17;
-            this.labelMetaDescriptionLengthOutput.Text = "will appear here";
+            this.labelMetaDescriptionLengthOutput.Text = "Count of Meta Description";
             // 
             // labelMetaDescriptionLength
             // 
@@ -176,12 +305,13 @@
             // labelPageTitleLengthOutput
             // 
             this.labelPageTitleLengthOutput.AutoSize = true;
-            this.labelPageTitleLengthOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageTitleLengthOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageTitleLengthOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.labelPageTitleLengthOutput.Location = new System.Drawing.Point(126, 106);
             this.labelPageTitleLengthOutput.Name = "labelPageTitleLengthOutput";
-            this.labelPageTitleLengthOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelPageTitleLengthOutput.Size = new System.Drawing.Size(108, 15);
             this.labelPageTitleLengthOutput.TabIndex = 15;
-            this.labelPageTitleLengthOutput.Text = "will appear here";
+            this.labelPageTitleLengthOutput.Text = "Count of Page Title";
             // 
             // labelPageTitleLength
             // 
@@ -196,12 +326,13 @@
             // labelURLOutput
             // 
             this.labelURLOutput.AutoSize = true;
-            this.labelURLOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelURLOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelURLOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.labelURLOutput.Location = new System.Drawing.Point(126, 34);
             this.labelURLOutput.Name = "labelURLOutput";
-            this.labelURLOutput.Size = new System.Drawing.Size(97, 15);
+            this.labelURLOutput.Size = new System.Drawing.Size(30, 15);
             this.labelURLOutput.TabIndex = 13;
-            this.labelURLOutput.Text = "will appear here";
+            this.labelURLOutput.Text = "URL ";
             // 
             // labelPageUrl
             // 
@@ -216,12 +347,13 @@
             // 
             // labelMetaDescriptionResult
             // 
-            this.labelMetaDescriptionResult.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetaDescriptionResult.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetaDescriptionResult.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.labelMetaDescriptionResult.Location = new System.Drawing.Point(126, 156);
             this.labelMetaDescriptionResult.Name = "labelMetaDescriptionResult";
             this.labelMetaDescriptionResult.Size = new System.Drawing.Size(314, 63);
             this.labelMetaDescriptionResult.TabIndex = 11;
-            this.labelMetaDescriptionResult.Text = "will appear here";
+            this.labelMetaDescriptionResult.Text = "Meta Description";
             // 
             // labelMetaDescription
             // 
@@ -244,12 +376,13 @@
             // 
             // labelPageTitleResult
             // 
-            this.labelPageTitleResult.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageTitleResult.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageTitleResult.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.labelPageTitleResult.Location = new System.Drawing.Point(126, 58);
             this.labelPageTitleResult.Name = "labelPageTitleResult";
             this.labelPageTitleResult.Size = new System.Drawing.Size(345, 39);
             this.labelPageTitleResult.TabIndex = 7;
-            this.labelPageTitleResult.Text = "will appear here";
+            this.labelPageTitleResult.Text = "Page Title";
             // 
             // labelPageTitle
             // 
@@ -270,6 +403,8 @@
             // 
             // groupBoxSummary
             // 
+            this.groupBoxSummary.Controls.Add(this.labelResponseTimePassOutput);
+            this.groupBoxSummary.Controls.Add(this.labelResponseTimePass);
             this.groupBoxSummary.Controls.Add(this.labelResponseOutput);
             this.groupBoxSummary.Controls.Add(this.labelResponse);
             this.groupBoxSummary.Controls.Add(this.labelPageTitlePassOutput);
@@ -284,25 +419,37 @@
             this.groupBoxSummary.TabStop = false;
             this.groupBoxSummary.Text = "Page Summary";
             // 
-            // labelMetaPass
+            // labelResponseOutput
             // 
-            this.labelMetaPass.AutoSize = true;
-            this.labelMetaPass.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetaPass.Location = new System.Drawing.Point(6, 33);
-            this.labelMetaPass.Name = "labelMetaPass";
-            this.labelMetaPass.Size = new System.Drawing.Size(131, 15);
-            this.labelMetaPass.TabIndex = 18;
-            this.labelMetaPass.Text = "Meta Description Pass:";
+            this.labelResponseOutput.AutoSize = true;
+            this.labelResponseOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelResponseOutput.Location = new System.Drawing.Point(143, 106);
+            this.labelResponseOutput.Name = "labelResponseOutput";
+            this.labelResponseOutput.Size = new System.Drawing.Size(87, 15);
+            this.labelResponseOutput.TabIndex = 22;
+            this.labelResponseOutput.Text = "Response Code";
             // 
-            // labelMetaDescriptionPassOutput
+            // labelResponse
             // 
-            this.labelMetaDescriptionPassOutput.AutoSize = true;
-            this.labelMetaDescriptionPassOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetaDescriptionPassOutput.Location = new System.Drawing.Point(143, 32);
-            this.labelMetaDescriptionPassOutput.Name = "labelMetaDescriptionPassOutput";
-            this.labelMetaDescriptionPassOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelMetaDescriptionPassOutput.TabIndex = 18;
-            this.labelMetaDescriptionPassOutput.Text = "will appear here";
+            this.labelResponse.AutoSize = true;
+            this.labelResponse.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponse.Location = new System.Drawing.Point(6, 106);
+            this.labelResponse.Name = "labelResponse";
+            this.labelResponse.Size = new System.Drawing.Size(123, 15);
+            this.labelResponse.TabIndex = 21;
+            this.labelResponse.Text = "Page Response Code:";
+            // 
+            // labelPageTitlePassOutput
+            // 
+            this.labelPageTitlePassOutput.AutoSize = true;
+            this.labelPageTitlePassOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageTitlePassOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelPageTitlePassOutput.Location = new System.Drawing.Point(143, 57);
+            this.labelPageTitlePassOutput.Name = "labelPageTitlePassOutput";
+            this.labelPageTitlePassOutput.Size = new System.Drawing.Size(59, 15);
+            this.labelPageTitlePassOutput.TabIndex = 20;
+            this.labelPageTitlePassOutput.Text = "pass / fail";
             // 
             // labelPageTitlePass
             // 
@@ -314,160 +461,65 @@
             this.labelPageTitlePass.TabIndex = 19;
             this.labelPageTitlePass.Text = "Page Title Pass:";
             // 
-            // labelPageTitlePassOutput
+            // labelMetaDescriptionPassOutput
             // 
-            this.labelPageTitlePassOutput.AutoSize = true;
-            this.labelPageTitlePassOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPageTitlePassOutput.Location = new System.Drawing.Point(143, 57);
-            this.labelPageTitlePassOutput.Name = "labelPageTitlePassOutput";
-            this.labelPageTitlePassOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelPageTitlePassOutput.TabIndex = 20;
-            this.labelPageTitlePassOutput.Text = "will appear here";
+            this.labelMetaDescriptionPassOutput.AutoSize = true;
+            this.labelMetaDescriptionPassOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetaDescriptionPassOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelMetaDescriptionPassOutput.Location = new System.Drawing.Point(143, 32);
+            this.labelMetaDescriptionPassOutput.Name = "labelMetaDescriptionPassOutput";
+            this.labelMetaDescriptionPassOutput.Size = new System.Drawing.Size(59, 15);
+            this.labelMetaDescriptionPassOutput.TabIndex = 18;
+            this.labelMetaDescriptionPassOutput.Text = "pass / fail";
             // 
-            // labelResponse
+            // labelMetaPass
             // 
-            this.labelResponse.AutoSize = true;
-            this.labelResponse.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResponse.Location = new System.Drawing.Point(6, 81);
-            this.labelResponse.Name = "labelResponse";
-            this.labelResponse.Size = new System.Drawing.Size(123, 15);
-            this.labelResponse.TabIndex = 21;
-            this.labelResponse.Text = "Page Response Code:";
+            this.labelMetaPass.AutoSize = true;
+            this.labelMetaPass.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetaPass.Location = new System.Drawing.Point(6, 33);
+            this.labelMetaPass.Name = "labelMetaPass";
+            this.labelMetaPass.Size = new System.Drawing.Size(131, 15);
+            this.labelMetaPass.TabIndex = 18;
+            this.labelMetaPass.Text = "Meta Description Pass:";
             // 
-            // labelResponseOutput
+            // labelResponseTimePassOutput
             // 
-            this.labelResponseOutput.AutoSize = true;
-            this.labelResponseOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResponseOutput.Location = new System.Drawing.Point(143, 81);
-            this.labelResponseOutput.Name = "labelResponseOutput";
-            this.labelResponseOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelResponseOutput.TabIndex = 22;
-            this.labelResponseOutput.Text = "will appear here";
+            this.labelResponseTimePassOutput.AutoSize = true;
+            this.labelResponseTimePassOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseTimePassOutput.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelResponseTimePassOutput.Location = new System.Drawing.Point(143, 81);
+            this.labelResponseTimePassOutput.Name = "labelResponseTimePassOutput";
+            this.labelResponseTimePassOutput.Size = new System.Drawing.Size(59, 15);
+            this.labelResponseTimePassOutput.TabIndex = 24;
+            this.labelResponseTimePassOutput.Text = "pass / fail";
             // 
-            // labelLinks
+            // labelResponseTimePass
             // 
-            this.labelLinks.AutoSize = true;
-            this.labelLinks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLinks.Location = new System.Drawing.Point(477, 106);
-            this.labelLinks.Name = "labelLinks";
-            this.labelLinks.Size = new System.Drawing.Size(38, 15);
-            this.labelLinks.TabIndex = 18;
-            this.labelLinks.Text = "Links:";
+            this.labelResponseTimePass.AutoSize = true;
+            this.labelResponseTimePass.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResponseTimePass.Location = new System.Drawing.Point(6, 81);
+            this.labelResponseTimePass.Name = "labelResponseTimePass";
+            this.labelResponseTimePass.Size = new System.Drawing.Size(119, 15);
+            this.labelResponseTimePass.TabIndex = 23;
+            this.labelResponseTimePass.Text = "Response Time Pass:";
             // 
-            // labelLinksOutput
+            // buttonExport
             // 
-            this.labelLinksOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLinksOutput.Location = new System.Drawing.Point(614, 106);
-            this.labelLinksOutput.Name = "labelLinksOutput";
-            this.labelLinksOutput.Size = new System.Drawing.Size(233, 186);
-            this.labelLinksOutput.TabIndex = 19;
-            this.labelLinksOutput.Text = "will appear here";
+            this.buttonExport.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExport.Location = new System.Drawing.Point(323, 139);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(129, 23);
+            this.buttonExport.TabIndex = 17;
+            this.buttonExport.Text = "Export the Results";
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
-            // labelNoOfLinks
-            // 
-            this.labelNoOfLinks.AutoSize = true;
-            this.labelNoOfLinks.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfLinks.Location = new System.Drawing.Point(477, 58);
-            this.labelNoOfLinks.Name = "labelNoOfLinks";
-            this.labelNoOfLinks.Size = new System.Drawing.Size(74, 15);
-            this.labelNoOfLinks.TabIndex = 20;
-            this.labelNoOfLinks.Text = "No. of Links:";
-            // 
-            // labelNoOfAnchors
-            // 
-            this.labelNoOfAnchors.AutoSize = true;
-            this.labelNoOfAnchors.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfAnchors.Location = new System.Drawing.Point(477, 82);
-            this.labelNoOfAnchors.Name = "labelNoOfAnchors";
-            this.labelNoOfAnchors.Size = new System.Drawing.Size(91, 15);
-            this.labelNoOfAnchors.TabIndex = 21;
-            this.labelNoOfAnchors.Text = "No. of Anchors:";
-            // 
-            // labelNoOfLinkOutput
-            // 
-            this.labelNoOfLinkOutput.AutoSize = true;
-            this.labelNoOfLinkOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfLinkOutput.Location = new System.Drawing.Point(614, 58);
-            this.labelNoOfLinkOutput.Name = "labelNoOfLinkOutput";
-            this.labelNoOfLinkOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelNoOfLinkOutput.TabIndex = 22;
-            this.labelNoOfLinkOutput.Text = "will appear here";
-            // 
-            // labelNoOfAnchorOutput
-            // 
-            this.labelNoOfAnchorOutput.AutoSize = true;
-            this.labelNoOfAnchorOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfAnchorOutput.Location = new System.Drawing.Point(614, 82);
-            this.labelNoOfAnchorOutput.Name = "labelNoOfAnchorOutput";
-            this.labelNoOfAnchorOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelNoOfAnchorOutput.TabIndex = 23;
-            this.labelNoOfAnchorOutput.Text = "will appear here";
-            // 
-            // labelRedirect
-            // 
-            this.labelRedirect.AutoSize = true;
-            this.labelRedirect.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRedirect.Location = new System.Drawing.Point(14, 230);
-            this.labelRedirect.Name = "labelRedirect";
-            this.labelRedirect.Size = new System.Drawing.Size(57, 15);
-            this.labelRedirect.TabIndex = 24;
-            this.labelRedirect.Text = "Redirect:";
-            // 
-            // labelRedirectOutput
-            // 
-            this.labelRedirectOutput.AutoSize = true;
-            this.labelRedirectOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRedirectOutput.Location = new System.Drawing.Point(126, 230);
-            this.labelRedirectOutput.Name = "labelRedirectOutput";
-            this.labelRedirectOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelRedirectOutput.TabIndex = 25;
-            this.labelRedirectOutput.Text = "will appear here";
-            // 
-            // labelResponseTime
-            // 
-            this.labelResponseTime.AutoSize = true;
-            this.labelResponseTime.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResponseTime.Location = new System.Drawing.Point(14, 256);
-            this.labelResponseTime.Name = "labelResponseTime";
-            this.labelResponseTime.Size = new System.Drawing.Size(93, 15);
-            this.labelResponseTime.TabIndex = 26;
-            this.labelResponseTime.Text = "Response Time:";
-            // 
-            // labelResponseTimeOutput
-            // 
-            this.labelResponseTimeOutput.AutoSize = true;
-            this.labelResponseTimeOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResponseTimeOutput.Location = new System.Drawing.Point(126, 256);
-            this.labelResponseTimeOutput.Name = "labelResponseTimeOutput";
-            this.labelResponseTimeOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelResponseTimeOutput.TabIndex = 27;
-            this.labelResponseTimeOutput.Text = "will appear here";
-            // 
-            // labelH1Content
-            // 
-            this.labelH1Content.AutoSize = true;
-            this.labelH1Content.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelH1Content.Location = new System.Drawing.Point(13, 281);
-            this.labelH1Content.Name = "labelH1Content";
-            this.labelH1Content.Size = new System.Drawing.Size(74, 15);
-            this.labelH1Content.TabIndex = 28;
-            this.labelH1Content.Text = "H1 Content:";
-            // 
-            // labelH1ContentOutput
-            // 
-            this.labelH1ContentOutput.AutoSize = true;
-            this.labelH1ContentOutput.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelH1ContentOutput.Location = new System.Drawing.Point(126, 281);
-            this.labelH1ContentOutput.Name = "labelH1ContentOutput";
-            this.labelH1ContentOutput.Size = new System.Drawing.Size(97, 15);
-            this.labelH1ContentOutput.TabIndex = 29;
-            this.labelH1ContentOutput.Text = "will appear here";
-            // 
-            // Form1
+            // FormQuickReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 499);
+            this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.groupBoxSummary);
             this.Controls.Add(this.groupBoxResults);
             this.Controls.Add(this.buttonRun);
@@ -475,7 +527,7 @@
             this.Controls.Add(this.labelSubIntro);
             this.Controls.Add(this.labelURL);
             this.Controls.Add(this.labelIntro);
-            this.Name = "Form1";
+            this.Name = "FormQuickReport";
             this.Text = "Web Bot";
             this.groupBoxResults.ResumeLayout(false);
             this.groupBoxResults.PerformLayout();
@@ -525,6 +577,9 @@
         private System.Windows.Forms.Label labelResponseTime;
         private System.Windows.Forms.Label labelH1ContentOutput;
         private System.Windows.Forms.Label labelH1Content;
+        private System.Windows.Forms.Label labelResponseTimePassOutput;
+        private System.Windows.Forms.Label labelResponseTimePass;
+        private System.Windows.Forms.Button buttonExport;
     }
 }
 

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HtmlAgilityPack;
+using System.Diagnostics;
+
 
 namespace webBot
 {
@@ -16,7 +19,7 @@ namespace webBot
         public FormWelcome()
         {
             InitializeComponent();
-            new Form1();
+            new FormQuickReport();
         }
 
         private void labelSubIntro_Click(object sender, EventArgs e)
@@ -31,9 +34,15 @@ namespace webBot
 
         private void buttonQuickReport_Click(object sender, EventArgs e)
         {
-            Form1 QuickReportForm = new Form1();
+            FormQuickReport QuickReportForm = new FormQuickReport();
             QuickReportForm.Show();
             
+        }
+
+        private void buttonFullReport_Click(object sender, EventArgs e)
+        {
+            string holdingMessage = "Coming Soon!";
+            MessageBox.Show(holdingMessage);
         }
         /* Form1 open on button click. Form for Full Report still to be designed */
     }
