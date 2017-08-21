@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using System.Diagnostics;
+using System.IO;
 
 namespace webBot
 {
@@ -17,6 +18,8 @@ namespace webBot
         public Math mathmatics = new Math();
         public QuickReport reportA = new QuickReport();
         public VisualIndicators indicators = new VisualIndicators();
+        public Save saveReport = new Save();
+
         public FormQuickReport()
         {
             InitializeComponent();
@@ -154,11 +157,8 @@ namespace webBot
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-          
-            
-            //  string fileTitle = "WebBot";
-           // string testText = "Your Results";
-            //WriteAllText(@"C:\" + fileTitle + ".txt", testText);
+            saveReport.SaveFile();
+           // call save class
         }
     }
 }
